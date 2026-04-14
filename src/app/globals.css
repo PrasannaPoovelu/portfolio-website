@@ -4,13 +4,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
+/* =============================================
+   CSS VARIABLES — Light Theme (default)
+   ============================================= */
 :root {
-  --bg: #0a0f1e;
-  --surface: #0f172a;
-  --card: #1e293b;
-  --border: #334155;
+  --bg-page:     #f8fafc;
+  --bg-surface:  #f1f5f9;
+  --bg-card:     #ffffff;
+  --border:      #e2e8f0;
+  --text-base:   #0f172a;
+  --text-muted:  #475569;
+  --text-subtle: #94a3b8;
+  --shadow:      0 4px 24px 0 rgba(15,23,42,0.08);
 }
 
+/* =============================================
+   CSS VARIABLES — Dark Theme
+   ============================================= */
+html.dark {
+  --bg-page:     #0a0f1e;
+  --bg-surface:  #0f172a;
+  --bg-card:     #1e293b;
+  --border:      #334155;
+  --text-base:   #e2e8f0;
+  --text-muted:  #94a3b8;
+  --text-subtle: #64748b;
+  --shadow:      0 4px 24px 0 rgba(0,0,0,0.4);
+}
+
+/* =============================================
+   RESET
+   ============================================= */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -23,36 +47,68 @@ html {
 }
 
 body {
-  background-color: var(--bg);
-  color: #e2e8f0;
+  background-color: var(--bg-page);
+  color: var(--text-base);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* =============================================
+   THEME TRANSITIONS — smooth switching
+   ============================================= */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }
-::-webkit-scrollbar-track {
-  background: var(--bg);
+
+/* Exclude transitions that would cause jank */
+*:not(
+  body,
+  [class*="bg-"],
+  [class*="border-"],
+  [class*="text-"],
+  header,
+  footer,
+  section,
+  div,
+  span,
+  p,
+  h1, h2, h3, h4, h5, h6,
+  a,
+  button,
+  nav,
+  li,
+  ul
+) {
+  transition: none;
 }
+
+/* =============================================
+   CUSTOM SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-page); }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: var(--border);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
+::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
 
-/* Selection */
+/* =============================================
+   SELECTION
+   ============================================= */
 ::selection {
   background: rgba(59, 130, 246, 0.3);
   color: #fff;
 }
 
-/* Utility */
+/* =============================================
+   UTILITIES
+   ============================================= */
 .text-gradient {
   background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa);
   background-size: 200% 200%;
@@ -60,4 +116,9 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient 4s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
 }

@@ -19,7 +19,7 @@ export default function Recommendations() {
 
       {/* LinkedIn note */}
       <div className="flex items-center justify-center gap-2 mb-10">
-        <span className="text-xs text-slate-500">Sourced from</span>
+        <span className="text-xs text-theme-subtle">Sourced from</span>
         <a
           href="https://linkedin.com/in/prasanna-poovelu"
           target="_blank"
@@ -43,7 +43,7 @@ export default function Recommendations() {
               className={`w-full text-left flex items-center gap-3 p-3 rounded-xl border transition-all duration-200 ${
                 i === active
                   ? "bg-primary-500/10 border-primary-500/40 shadow-lg shadow-primary-500/10"
-                  : "bg-dark-card border-dark-border hover:border-dark-border/80 hover:bg-dark-card/80"
+                  : "bg-theme-card border-theme-border hover:border-primary-500/20 hover:bg-theme-card/80"
               }`}
             >
               {/* Avatar */}
@@ -51,7 +51,7 @@ export default function Recommendations() {
                 className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 transition-colors ${
                   i === active
                     ? "bg-primary-600 text-white"
-                    : "bg-dark-surface text-slate-400"
+                    : "bg-theme-surface text-theme-muted"
                 }`}
               >
                 {rec.avatar}
@@ -59,13 +59,13 @@ export default function Recommendations() {
               <div className="min-w-0">
                 <p
                   className={`text-sm font-medium truncate transition-colors ${
-                    i === active ? "text-white" : "text-slate-300"
+                    i === active ? "text-theme-base" : "text-theme-muted"
                   }`}
                 >
                   {rec.name}
                 </p>
-                <p className="text-slate-500 text-xs truncate">{rec.role}</p>
-                <p className="text-slate-600 text-xs truncate">{rec.company}</p>
+                <p className="text-theme-subtle text-xs truncate">{rec.role}</p>
+                <p className="text-theme-subtle text-xs truncate opacity-70">{rec.company}</p>
               </div>
               {i === active && (
                 <svg
@@ -88,24 +88,24 @@ export default function Recommendations() {
 
         {/* Main recommendation card */}
         <div className="lg:col-span-2">
-          <div className="bg-dark-card border border-dark-border rounded-2xl p-8 relative overflow-hidden">
+          <div className="bg-theme-card border border-theme-border rounded-2xl p-8 relative overflow-hidden">
             {/* Decorative quote mark */}
             <div className="absolute top-4 right-6 text-8xl text-primary-500/5 font-serif leading-none select-none">
-              "
+              &ldquo;
             </div>
 
             {/* Relation */}
-            <p className="text-xs text-slate-500 uppercase tracking-wider mb-5 font-medium">
+            <p className="text-xs text-theme-subtle uppercase tracking-wider mb-5 font-medium">
               {current.relation}
             </p>
 
             {/* Quote */}
-            <blockquote className="text-slate-300 text-base leading-relaxed mb-6 relative z-10">
+            <blockquote className="text-theme-muted text-base leading-relaxed mb-6 relative z-10">
               &ldquo;{current.text}&rdquo;
             </blockquote>
 
             {/* Divider */}
-            <div className="h-px bg-dark-border mb-6" />
+            <div className="h-px bg-theme-border mb-6" />
 
             {/* Author */}
             <div className="flex items-center justify-between flex-wrap gap-4">
@@ -114,13 +114,13 @@ export default function Recommendations() {
                   {current.avatar}
                 </div>
                 <div>
-                  <p className="text-white font-semibold">{current.name}</p>
+                  <p className="text-theme-base font-semibold">{current.name}</p>
                   <p className="text-primary-400 text-sm">{current.role}</p>
-                  <p className="text-slate-500 text-xs">{current.company}</p>
+                  <p className="text-theme-subtle text-xs">{current.company}</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-slate-500 text-xs">{current.date}</p>
+                <p className="text-theme-subtle text-xs">{current.date}</p>
                 <div className="flex mt-1">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <svg
@@ -146,7 +146,7 @@ export default function Recommendations() {
                 className={`rounded-full transition-all duration-200 ${
                   i === active
                     ? "w-6 h-2 bg-primary-500"
-                    : "w-2 h-2 bg-dark-border hover:bg-slate-500"
+                    : "w-2 h-2 bg-theme-border hover:bg-theme-muted"
                 }`}
                 aria-label={`Recommendation ${i + 1}`}
               />

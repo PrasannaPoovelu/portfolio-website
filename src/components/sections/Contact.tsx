@@ -45,11 +45,11 @@ export default function Contact() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left: Message */}
         <div className="space-y-6">
-          <div className="bg-dark-card border border-dark-border rounded-xl p-6">
-            <h3 className="text-white font-semibold text-lg mb-3">
+          <div className="bg-theme-card border border-theme-border rounded-xl p-6">
+            <h3 className="text-theme-base font-semibold text-lg mb-3">
               🚀 What I Bring
             </h3>
-            <ul className="space-y-2.5 text-sm text-slate-400">
+            <ul className="space-y-2.5 text-sm text-theme-muted">
               {[
                 "5+ years of React + TypeScript expertise in enterprise environments",
                 "Proven track record at Infosys (Barclays) and Mediwave Digital",
@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
 
           <div className="bg-gradient-to-br from-primary-500/10 to-accent-500/10 border border-primary-500/20 rounded-xl p-5 text-center">
-            <p className="text-slate-300 text-sm leading-relaxed mb-4">
+            <p className="text-theme-muted text-sm leading-relaxed mb-4">
               Currently open to{" "}
               <span className="text-primary-400 font-medium">
                 Senior Frontend Developer
@@ -93,20 +93,20 @@ export default function Contact() {
               href={link.href}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group flex items-center gap-4 bg-dark-card border border-dark-border rounded-xl p-5 hover:border-primary-500/40 hover:-translate-y-0.5 transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/10"
+              className="group flex items-center gap-4 bg-theme-card border border-theme-border rounded-xl p-5 hover:border-primary-500/40 hover:-translate-y-0.5 transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/10"
             >
               <span className="text-3xl flex-shrink-0">{link.icon}</span>
               <div className="flex-1 min-w-0">
-                <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
+                <p className="text-theme-subtle text-xs uppercase tracking-wider mb-0.5">
                   {link.label}
                 </p>
-                <p className="text-white font-medium truncate group-hover:text-primary-400 transition-colors">
+                <p className="text-theme-base font-medium truncate group-hover:text-primary-400 transition-colors">
                   {link.value}
                 </p>
-                <p className="text-slate-500 text-xs">{link.description}</p>
+                <p className="text-theme-subtle text-xs">{link.description}</p>
               </div>
               <svg
-                className="w-5 h-5 text-slate-600 group-hover:text-primary-400 transition-colors flex-shrink-0"
+                className="w-5 h-5 text-theme-subtle group-hover:text-primary-400 transition-colors flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -18,19 +18,20 @@ export default function Badge({
       className={cn(
         "inline-flex items-center rounded-full font-medium transition-colors",
         {
-          "bg-dark-card text-slate-300 border border-dark-border":
+          "bg-theme-surface text-theme-muted border border-theme-border":
             variant === "default",
-          "bg-primary-500/10 text-primary-400 border border-primary-500/20":
+          "bg-primary-500/10 text-primary-600 dark:text-primary-400 border border-primary-500/20":
             variant === "primary",
-          "bg-accent-500/10 text-accent-400 border border-accent-500/20":
+          "bg-accent-500/10 text-accent-600 dark:text-accent-400 border border-accent-500/20":
             variant === "accent",
-          "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20":
+          "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20":
             variant === "success",
-          "border border-dark-border text-slate-400": variant === "outline",
+          "border border-theme-border text-theme-muted":
+            variant === "outline",
         },
         {
           "px-2.5 py-0.5 text-xs": size === "sm",
-          "px-3.5 py-1 text-sm": size === "md",
+          "px-3.5 py-1 text-sm":   size === "md",
         },
         className
       )}

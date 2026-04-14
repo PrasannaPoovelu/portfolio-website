@@ -15,7 +15,7 @@ export default function Experience() {
       {/* Timeline */}
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/60 via-dark-border to-transparent hidden sm:block" />
+        <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary-500/60 via-theme-border to-transparent hidden sm:block" />
 
         <div className="space-y-10">
           {experiences.map((exp, index) => (
@@ -26,18 +26,18 @@ export default function Experience() {
                   className={`w-4 h-4 rounded-full border-2 ${
                     exp.current
                       ? "bg-primary-500 border-primary-400 shadow-[0_0_12px_rgba(59,130,246,0.6)]"
-                      : "bg-dark-card border-dark-border"
+                      : "bg-theme-card border-theme-border"
                   }`}
                 />
               </div>
 
               {/* Card */}
-              <div className="bg-dark-card border border-dark-border rounded-xl p-6 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5">
+              <div className="bg-theme-card border border-theme-border rounded-xl p-6 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                   <div>
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <h3 className="text-white font-semibold text-lg">
+                      <h3 className="text-theme-base font-semibold text-lg">
                         {exp.role}
                       </h3>
                       {exp.current && (
@@ -47,14 +47,14 @@ export default function Experience() {
                       )}
                     </div>
                     <p className="text-primary-400 font-medium">{exp.company}</p>
-                    <p className="text-slate-500 text-sm">{exp.location}</p>
+                    <p className="text-theme-subtle text-sm">{exp.location}</p>
                   </div>
                   <div className="flex-shrink-0">
                     <Badge variant="outline" size="sm">
                       {exp.period}
                     </Badge>
                     {index === 0 && (
-                      <span className="ml-2 text-xs text-slate-500">
+                      <span className="ml-2 text-xs text-theme-subtle">
                         ~{Math.floor((new Date().getFullYear() - 2024) * 12 + new Date().getMonth() - 5)}+ months
                       </span>
                     )}
@@ -64,7 +64,7 @@ export default function Experience() {
                 {/* Project Tag */}
                 {exp.project && (
                   <div className="mb-4 flex items-center gap-2 flex-wrap">
-                    <span className="text-xs text-slate-500">Project:</span>
+                    <span className="text-xs text-theme-subtle">Project:</span>
                     <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary-500/10 text-primary-400 border border-primary-500/20">
                       {exp.project}
                     </span>
@@ -76,7 +76,7 @@ export default function Experience() {
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="flex gap-2.5 text-sm">
                       <span className="text-primary-500 mt-0.5 flex-shrink-0">▸</span>
-                      <span className="text-slate-400 leading-relaxed">{resp}</span>
+                      <span className="text-theme-muted leading-relaxed">{resp}</span>
                     </li>
                   ))}
                 </ul>

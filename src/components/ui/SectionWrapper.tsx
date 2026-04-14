@@ -7,18 +7,13 @@ interface SectionWrapperProps {
   darker?: boolean;
 }
 
-export default function SectionWrapper({
-  id,
-  children,
-  className,
-  darker = false,
-}: SectionWrapperProps) {
+export default function SectionWrapper({ id, children, className, darker = false }: SectionWrapperProps) {
   return (
     <section
       id={id}
       className={cn(
         "py-20 px-4 sm:px-6 lg:px-8",
-        darker ? "bg-dark-surface" : "bg-dark-bg",
+        darker ? "bg-theme-surface" : "bg-theme-page",
         className
       )}
     >

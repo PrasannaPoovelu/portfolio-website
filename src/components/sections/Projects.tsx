@@ -22,14 +22,14 @@ export default function Projects() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`group bg-dark-card border border-dark-border rounded-xl p-6 hover:border-primary-500/40 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 flex flex-col ${
+            className={`group bg-theme-card border border-theme-border rounded-xl p-6 hover:border-primary-500/40 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 flex flex-col ${
               index === 0 ? "md:col-span-2" : ""
             }`}
           >
             {/* Top row */}
             <div className="flex items-start justify-between gap-3 mb-3">
               <div>
-                <h3 className="text-white font-semibold text-lg group-hover:text-primary-400 transition-colors">
+                <h3 className="text-theme-base font-semibold text-lg group-hover:text-primary-400 transition-colors">
                   {project.title}
                 </h3>
               </div>
@@ -47,7 +47,7 @@ export default function Projects() {
             </div>
 
             {/* Description */}
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-theme-muted text-sm leading-relaxed mb-4">
               {project.description}
             </p>
 
@@ -56,21 +56,21 @@ export default function Projects() {
               {project.highlights.map((h, i) => (
                 <li key={i} className="flex gap-2 text-sm">
                   <span className="text-primary-500 flex-shrink-0 mt-0.5">▸</span>
-                  <span className="text-slate-400">{h}</span>
+                  <span className="text-theme-muted">{h}</span>
                 </li>
               ))}
             </ul>
 
             {/* Tech Stack */}
             <div>
-              <p className="text-xs text-slate-500 mb-2 font-medium uppercase tracking-wider">
+              <p className="text-xs text-theme-subtle mb-2 font-medium uppercase tracking-wider">
                 Tech Stack
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-dark-surface border border-dark-border text-slate-300 hover:border-primary-500/30 hover:text-primary-400 transition-colors"
+                    className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-theme-surface border border-theme-border text-theme-muted hover:border-primary-500/30 hover:text-primary-400 transition-colors"
                   >
                     {tech}
                   </span>
