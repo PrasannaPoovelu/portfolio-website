@@ -22,14 +22,14 @@
    CSS VARIABLES — Dark Theme
    ============================================= */
 html.dark {
-  --bg-page:     #0a0f1e;
-  --bg-surface:  #0f172a;
-  --bg-card:     #1e293b;
-  --border:      #334155;
-  --text-base:   #e2e8f0;
-  --text-muted:  #94a3b8;
-  --text-subtle: #64748b;
-  --shadow:      0 4px 24px 0 rgba(0,0,0,0.4);
+  --bg-page:     #111111;
+  --bg-surface:  #1a1a1a;
+  --bg-card:     #1f1f1f;
+  --border:      #2e2e2e;
+  --text-base:   #f0f0f0;
+  --text-muted:  #a0a0a0;
+  --text-subtle: #666666;
+  --shadow:      0 4px 24px 0 rgba(0,0,0,0.6);
 }
 
 /* =============================================
