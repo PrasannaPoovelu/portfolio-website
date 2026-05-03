@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -63,8 +64,14 @@ export default function Header() {
             onClick={(e) => handleNavClick(e, "#hero")}
             className="flex items-center gap-2 group"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-md group-hover:scale-105 transition-transform">
-              PP
+            <div className="w-8 h-8 rounded-lg overflow-hidden border-2 border-primary-500/30 shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+              <Image
+                src="/assets/images/prasanna-profile.png"
+                alt="Prasanna Poovelu"
+                width={32}
+                height={32}
+                className="object-cover object-top w-full h-full"
+              />
             </div>
             <span className="font-semibold text-theme-base hidden sm:block">
               Prasanna<span className="text-primary-400">.</span>
@@ -118,7 +125,8 @@ export default function Header() {
 
             {/* Hire Me CTA */}
             <a
-              href="mailto:prasanna.poovelu23@gmail.com"
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors shadow-lg shadow-primary-500/20"
             >
               Hire Me
@@ -162,7 +170,8 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="mailto:prasanna.poovelu23@gmail.com"
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="mt-2 px-4 py-2 rounded-lg bg-primary-600 text-white text-sm font-medium text-center"
             >
               Hire Me

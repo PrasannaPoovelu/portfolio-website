@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { profile } from "@/data/profile";
 
 export default function Footer() {
@@ -7,8 +8,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm">
-              PP
+            <div className="w-8 h-8 rounded-lg overflow-hidden border-2 border-primary-500/30 flex-shrink-0">
+              <Image
+                src="/assets/images/prasanna-profile.png"
+                alt="Prasanna Poovelu"
+                width={32}
+                height={32}
+                className="object-cover object-top w-full h-full"
+              />
             </div>
             <div>
               <p className="text-theme-base font-semibold text-sm">{profile.name}</p>
