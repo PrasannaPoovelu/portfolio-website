@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/contexts/ThemeContext";
+import { withBase } from "@/lib/basePath";
 
 const navLinks = [
   { label: "About",           href: "#about" },
@@ -66,7 +67,7 @@ export default function Header() {
           >
             <div className="w-8 h-8 rounded-lg overflow-hidden border-2 border-primary-500/30 shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
               <Image
-                src="/assets/images/prasanna-profile.png"
+                src={withBase("/assets/images/prasanna-profile.png")}
                 alt="Prasanna Poovelu"
                 width={32}
                 height={32}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { profile } from "@/data/profile";
 import { useTheme } from "@/contexts/ThemeContext";
+import { withBase } from "@/lib/basePath";
 
 const techStack = ["React.js", "TypeScript", "Next.js", "Redux Toolkit", "Tailwind CSS"];
 
@@ -80,7 +81,7 @@ export default function Hero() {
                 Get In Touch
               </button>
               <a
-                href="/Prasanna_Resume.pdf"
+                href={withBase("/Prasanna_Resume.pdf")}
                 download="Prasanna_Poovelu_Resume.pdf"
                 className="px-6 py-2.5 rounded-lg border border-theme-border text-theme-muted hover:text-theme-base hover:bg-theme-surface font-semibold text-sm transition-all duration-200 flex items-center gap-2"
               >
@@ -115,7 +116,7 @@ export default function Hero() {
               {/* Photo circle */}
               <div className="relative w-52 h-52 rounded-full overflow-hidden border-2 border-primary-500/40">
                 <Image
-                  src="/assets/images/prasanna-profile.png"
+                  src={withBase("/assets/images/prasanna-profile.png")}
                   alt="Prasanna Poovelu — Front-End Developer"
                   fill
                   sizes="208px"
