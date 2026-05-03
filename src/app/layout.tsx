@@ -6,11 +6,6 @@ import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/favicon.png",
-    apple: "/apple-touch-icon.png",
-    other: { rel: "icon", url: "/favicon-192.png", sizes: "192x192" },
-  },
   title: "Prasanna Poovelu | Front-End Developer",
   description:
     "Senior Front-End Developer specializing in React.js and TypeScript. 5+ years building scalable enterprise UIs. Currently at Infosys (Barclays). Based in Puducherry, India.",
