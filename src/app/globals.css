@@ -23,9 +23,9 @@
    ============================================= */
 html.dark {
   --bg-page:     #111111;
-  --bg-surface:  #1a1a1a;
-  --bg-card:     #1f1f1f;
-  --border:      #2e2e2e;
+  --bg-surface:  #181818;
+  --bg-card:     #1e1e1e;
+  --border:      #2a2a2a;
   --text-base:   #f0f0f0;
   --text-muted:  #a0a0a0;
   --text-subtle: #666666;

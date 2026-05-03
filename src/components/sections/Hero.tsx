@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import { profile } from "@/data/profile";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const techStack = ["React.js", "TypeScript", "Next.js", "Redux Toolkit", "Tailwind CSS"];
 
 export default function Hero() {
+  const { isDark } = useTheme();
   const handleScroll = (href: string) => {
     document.getElementById(href.replace("#", ""))?.scrollIntoView({ behavior: "smooth" });
   };
@@ -13,11 +15,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center bg-theme-page overflow-hidden"
-      style={{ minHeight: "calc(100vh - 64px)", paddingTop: "64px" }}
+      className="relative flex items-center overflow-hidden"
+      style={{
+        minHeight: "calc(100vh - 64px)",
+        paddingTop: "64px",
+        ...(isDark && {
+          background: "linear-gradient(180deg, #1a1025 0%, #130d1e 25%, #111111 65%, #111111 100%)",
+        }),
+      }}
     >
       {/* Subtle top border accent line */}
-      <div className="absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
+      <div className="absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
