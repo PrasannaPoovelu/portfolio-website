@@ -61,39 +61,6 @@ export default function About() {
 
         {/* Right column */}
         <div className="lg:col-span-2 space-y-6">
-          <Card>
-            <h3 className="text-theme-base font-semibold mb-4 text-lg">📬 Contact</h3>
-            <ul className="space-y-3 text-sm">
-              {[
-                { icon: "📧", label: "Email",    value: profile.email,      href: `mailto:${profile.email}` },
-                { icon: "📱", label: "Phone",    value: profile.phone,      href: `tel:${profile.phone}` },
-                { icon: "📍", label: "Location", value: profile.location },
-                { icon: "🌐", label: "LinkedIn", value: "prasanna-poovelu", href: profile.linkedin },
-                { icon: "💻", label: "GitHub",   value: "PrasannaPoovelu", href: profile.github },
-                { icon: "🛂", label: "Passport", value: profile.passportValidity },
-              ].map((item) => (
-                <li key={item.label} className="flex gap-2 items-start">
-                  <span className="flex-shrink-0">{item.icon}</span>
-                  <div>
-                    <span className="text-theme-subtle">{item.label}: </span>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="text-primary-500 hover:text-primary-400 transition-colors break-all"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span className="text-theme-muted">{item.value}</span>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Card>
-
           {/* Languages */}
           <Card>
             <h3 className="text-theme-base font-semibold mb-4 text-lg">🌍 Languages</h3>
